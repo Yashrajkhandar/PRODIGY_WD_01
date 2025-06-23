@@ -1,0 +1,153 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, #ffe4ec, #dfe9f3);
+  color: #333;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.scrolled {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  background: #fff;
+  color: #ff6ec4;
+  box-shadow: 0 0 10px #ff6ec4aa;
+}
+
+
+.mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.mode-btn:hover {
+  transform: scale(1.1);
+}
+
+section {
+  padding: 120px 2rem 80px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+section:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+section p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+
+body.dark {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark header {
+  background: linear-gradient(90deg, #222, #333);
+}
+
+body.dark header.scrolled {
+  background: linear-gradient(90deg, #111, #222);
+}
+
+body.dark .nav-links a {
+  color: #f0f0f0;
+}
+
+body.dark .nav-links a:hover {
+  background: #f0f0f0;
+  color: #111;
+}
+
+body.dark section:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+body.dark section h2 {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #ff6ec4;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
